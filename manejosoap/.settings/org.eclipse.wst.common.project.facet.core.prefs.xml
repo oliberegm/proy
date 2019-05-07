@@ -1,0 +1,7 @@
+<root>
+  <facet id="jpt.jaxb">
+    <node name="classgen">
+      <attribute name="package" value="com.olibersystem.practicas.soap.ejemplo1.server"/>
+    </node>
+  </facet>
+</root>

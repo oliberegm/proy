@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="loggin" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/logs/apps/hb-config/hb-config_${weblogic.Name}.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{DATE} %5p %C %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="audit" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="C:/Users/Oliber/Desktop/codigo/mgproy/configurador/log/logserver.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{DATE} %5p %C %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<priority value="error"></priority>
+		<appender-ref ref="audit" />
+		<appender-ref ref="stdout" />
+	</root>
+	
+	<category name="org.springframework">
+		<priority value="debug"></priority>
+		<appender-ref ref="loggin" />
+	</category>
+
+	<category name="org.hibernate.type">
+		<priority value="debug"></priority>
+		<appender-ref ref="loggin" />
+	</category>
+
+	<category name="ar.com.redlink.homebanking.backend">
+		<priority value="debug"></priority>
+		<appender-ref ref="loggin" />
+	</category>
+
+	<category name="ar.com.redlink.framework.logging.client.sender.jms">
+		<priority value="debug"></priority>
+		<appender-ref ref="loggin" />
+	</category>
+
+	<category name="javax.jms">
+		<priority value="debug"></priority>
+		<appender-ref ref="loggin" />
+	</category>
+
+	<category name="weblogic.jms">
+		<priority value="debug"></priority>
+		<appender-ref ref="loggin" />
+	</category>
+	
+	<category name="ar.com.redlink.homebanking.logging.util.LogTemporal">
+		<priority value="debug"></priority>
+		<appender-ref ref="audit" />
+	</category>
+
+</log4j:configuration>
