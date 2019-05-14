@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ve.com.olibersystem</groupId>
+	<artifactId>bursatil</artifactId>
+	<version>TRUNK</version>
+	<packaging>pom</packaging>
+	<name>Aplicacion bursatil</name>
+	<url>http://maven.apache.org</url>
+	<modules>
+		<module>bursatil-configuration</module>
+		<module>bursatil-models</module>
+		<module>bursatil-repositories</module>
+		<module>bursatil-arq</module>
+		<!--<module>config-server</module>
+		<module>eureka-server</module>
+		<module>admin-server</module>
+		<module>deneb</module>
+		<module>sadr</module>-->
+	</modules>
+</project>
